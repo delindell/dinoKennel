@@ -38,7 +38,7 @@ const feedMe = (e) => {
          dinos[dinoPosition].health += 10;
         printDinos(dinos)
     }
-    else if (dinos[dinoPosition].health > 89 && dinos[dinoPosition].health <100){
+    else if (dinos[dinoPosition].health > 89 && dinos[dinoPosition].health < 100){
         dinos[dinoPosition].health = 100;
         printDinos(dinos)
     }
@@ -80,7 +80,11 @@ const viewSingleDino = (e) => {
     domString += `<h2 class="dino-name">${selectedDino.name}</h2>`
     domString += `<p class="dino-age">Age:  ${selectedDino.age}</p>`
     domString += `<p class="dino-type">Type:  ${selectedDino.type}</p>`
-    domString += `<p class="dino-owner">Owner:  ${selectedDino.owner}</p>`  
+    domString += `<p class="dino-owner">Owner:  ${selectedDino.owner}</p>` 
+    domString += '<div class="progress">'
+    domString += `<div class="progress-bar bg-danger" role="progressbar" style="width: ${selectedDino.health}%" aria-valuenow="${selectedDino.health}" aria-valuemin="0" aria-valuemax="100">`
+    domString += '</div>'
+    domString +=  '</div>' 
     domString += '</div>'
     domString += '</div>'
     domString += '</div>'
@@ -98,7 +102,11 @@ const printDinos = (dinoArray) => {
         domString += `<div class="card-body">`
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`
         domString += `<p class="card-text">Age:  ${dinoArray[i].age}</p>`
-        domString += `<p class="dino-health-score">Health:  ${dinoArray[i].health}</p>`
+        // domString += `<p class="dino-health-score">Health:  ${dinoArray[i].health}</p>`
+        domString += '<div class="progress">'
+        domString += `<div class="progress-bar bg-danger" role="progressbar" style="width: ${dinoArray[i].health}%" aria-valuenow="${dinoArray[i].health}" aria-valuemin="0" aria-valuemax="100">`
+        domString += '</div>'
+        domString +=  '</div>'
         domString += `<button class="btn btn-outline-primary feed-dino" id="close-single-view"><i class="fas fa-pizza-slice"></i></button>`
         domString += `<button class="btn btn-outline-dark single-dino" id="close-single-view"><i class="far fa-eye"></i></button>`
         domString += `<button class="btn btn-outline-danger delete-dino" id="close-single-view"><i class="fas fa-trash"></i></button>`
