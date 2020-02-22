@@ -17,6 +17,20 @@ const petEvents = () =>{
     };
 };
 
+const deleteDinoEvent = (e) => {
+    const dinoId = e.target.closest('.dino-card').id;
+    const dinoPosition = dinos.findIndex((p) => p.id === dinoId);
+    dinos.splice(dinoPosition, 1);
+    printDinos(dinos);
+}
+
+const deleteEvents = () =>{
+    const dinoDeleteButtons = document.getElementsByClassName('delete-dino');
+    for (let i = 0; i < dinoDeleteButtons.length; i++) {
+        dinoDeleteButtons[i].addEventListener('click', deleteDinoEvent);
+    };
+};
+
 const dinoHealth = (e) => {
     const dinoId = e.target.closest('.dino-card').id;
     const dinoPosition = dinos.findIndex((p) => p.id === dinoId);
@@ -66,6 +80,7 @@ const printDinos = (dinoArray) => {
         domString += `<p class="card-text">Age:  ${dinoArray[i].age}</p>`
         domString += `<p class="dino-health-score">Health:  ${dinoArray[i].health}</p>`
         domString += `<button class="btn btn-outline-dark single-dino" id="close-single-view"><i class="far fa-eye"></i></button>`
+        domString += `<button class="btn btn-outline-danger delete-dino" id="close-single-view"><i class="fas fa-trash"></i></button>`
         domString += `</div>`
         domString += `</div>`
         domString += `</div>`
@@ -73,6 +88,7 @@ const printDinos = (dinoArray) => {
     printToDom('kennel', domString);
     singleDinoAddEvents();    
     petEvents();
+    deleteEvents();
 };
 
 const dinos = [
