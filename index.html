@@ -25,27 +25,31 @@
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
-                <form>
-                    <div class="form-group">
-                      <label for="DinoName">Dino Name</label>
-                      <input type="name" class="form-control" id="dino-name" aria-describedby="emailHelp">
+                <form class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="dino-name">Dino Name</label>
+                            <input type="text" class="form-control" id="dino-name" aria-describedby="nameHelp" placeholder="Enter Name">
+                          </div>
+                          <div class="form-group">
+                            <label for="dino-age">Dino Age</label>
+                            <input type="number" class="form-control" id="dino-age" aria-describedby="ageHelp" placeholder="Enter Age">
+                          </div>    
+                          <div class="form-group">
+                            <label for="dino-image">Dino Image URL</label>
+                            <input type="text" class="form-control" id="dino-image" aria-describedby="imageHelp" placeholder="Enter Dino Image URL">
+                        </div>     
                     </div>
-                    <div class="form-group">
-                      <label for="dinoAge">Dino Age</label>
-                      <input type="number" class="form-control" id="dino-age">
+                    <div class="col-6">
+                        <div class="form-group">
+                        <label for="dino-type">Dino Type</label>
+                        <input type="text" class="form-control" id="dino-type" aria-describedby="typeHelp" placeholder="Enter Type of Dino">
                     </div>
-                    <div class="form-group">
-                        <label for="typeOfDino">Dino Type</label>
-                        <input type="typeOfDino" class="form-control" id="dino-type">
+                        <div class="form-group">
+                            <label for="dino-owner">Dino Owner</label>
+                            <input type="text" class="form-control" id="dino-owner" aria-describedby="ownerHelp" placeholder="Enter Your Name">
+                        </div> 
                     </div>
-                    <div class="form-group">
-                        <label for="dinoOwner">Dino Owner</label>
-                        <input type="dinoOwner" class="form-control" id="dino-owner">
-                    </div>  
-                    <div class="form-group">
-                        <label for="dinoImage">Dino Image URL</label>
-                        <input type="dinoImage" class="form-control" id="dino-image">
-                    </div>  
                     <button type="submit" class="btn btn-primary" id="create-dino-btn">Submit</button>
                </form>
             </div>
