@@ -9,13 +9,6 @@ const printDinos = () => {
 
 const dinos = [];
 
-// const clearNewDinoForm = () => {
-//     document.getElementById('dino-name').value = '';
-//     document.getElementById('dino-type').value = '';
-//     document.getElementById('dino-age').value = '';
-//     document.getElementById('dino-owner').value = '';
-//     document.getElementById('dino-image').value = '';
-// };
 
 const newDino = (e) => {
     e.preventDefault()
@@ -30,7 +23,8 @@ const newDino = (e) => {
         imageUrl: document.getElementById('dino-image').value
     }
     dinos.push(brandNewDino);
-    document.getElementById('new-dino-form').reset(); 
+    document.getElementById('new-dino-form').reset();
+    document.getElementById('collapseOne').classList.remove('show');
     console.log('hello', dinos);
 };
 
