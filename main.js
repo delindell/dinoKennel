@@ -26,15 +26,14 @@ const viewSingleDino = (e) => {
     domString +=       `<div class="co-6">`
     domString +=            `<img class="img-fluid" src="${selectedDino.imageUrl}"></img>`
     domString +=        '</div>'
-    domString += '<div class="col-6'
-    domString += `<h2 class="card-title">${selectedDino.name}</h2>`
-    domString += `<p class="card-text">Age:  ${selectedDino.age}</p>`
-    domString += `<p class="card-text">Age:  ${selectedDino.type}</p>`
-    domString += `<p class="dino-health-score">Owner:  ${selectedDino.owner}</p>`  
+    domString +=    '<div class="col-6'
+    domString +=            `<h2 class="card-title">${selectedDino.name}</h2>`
+    domString +=            `<p class="card-text">Age:  ${selectedDino.age}</p>`
+    domString +=            `<p class="card-text">Age:  ${selectedDino.type}</p>`
+    domString +=            `<p class="dino-health-score">Owner:  ${selectedDino.owner}</p>`  
     domString +=          '</div>'
     domString +=        '</div>'
     domString +=      '</div>'
-    
     printToDom('kennel', '');
     printToDom('single-view', domString);
     document.getElementById('close-single-view').addEventListener('click', closeSingleViewEvent);
