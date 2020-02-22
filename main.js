@@ -15,9 +15,25 @@ const closeSingleViewEvent = () =>{
     printDinos(dinos);
 }
 
-const viewSingleDino = () => {
-    let domString = ''
+const viewSingleDino = (e) => {
+    const dinoId = e.target.closest('.dino-card').id;
+    const selectedDino = dinos.find((currentDino) => dinoId === currentDino.id);
+    console.log('selectedDino', selectedDino)
+    let domString = '';
     domString += `<button class="btn btn-outline-dark single-dino" id="close-single-view"><i class="fas fa-window-close"></i></button>`
+    domString += `<div class="container">`
+    domString +=   `<div class="row">`
+    domString +=       `<div class="co-6">`
+    domString +=            `<img class="img-fluid" src="${selectedDino.imageUrl}"></img>`
+    domString +=        '</div>'
+    domString +=    '<div class="col-6'
+    domString +=            `<h2 class="card-title">${selectedDino.name}</h2>`
+    domString +=            `<p class="card-text">Age:  ${selectedDino.age}</p>`
+    domString +=            `<p class="card-text">Age:  ${selectedDino.type}</p>`
+    domString +=            `<p class="dino-health-score">Owner:  ${selectedDino.owner}</p>`  
+    domString +=          '</div>'
+    domString +=        '</div>'
+    domString +=      '</div>'
     printToDom('kennel', '');
     printToDom('single-view', domString);
     document.getElementById('close-single-view').addEventListener('click', closeSingleViewEvent);
@@ -27,7 +43,7 @@ const printDinos = (dinoArray) => {
     let domString = '';
     for (let i = 0; i < dinoArray.length; i++) {
         domString += `<div class="col-4">`
-        domString += `<div class="dino-card">`
+        domString += `<div id="${dinoArray[i].id}" class="dino-card">`
         domString += `<img src="${dinoArray[i].imageUrl}" class="card-img-top" alt="image-of-dino">`
         domString += `<div class="card-body">`
         domString += `<h2 class="card-title">${dinoArray[i].name}</h2>`
